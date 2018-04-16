@@ -2,6 +2,6 @@
 
 int main(){
 
-  Life a {8,10};
-  a.printn();
+  Life obj = reader_file();
+  obj.print();
 }

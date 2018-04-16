@@ -1,5 +1,6 @@
 #define header
 #include <iostream>
+#include <fstream>
 
 class Life{
   private:
@@ -11,7 +12,9 @@ class Life{
         nLin = Lin;
         nCol = Col;
     }
-    void printn(){
+    void print(){
        std::cout<< nLin << " " << nCol << std::endl;
     }
 };
+
+Life reader_file();
