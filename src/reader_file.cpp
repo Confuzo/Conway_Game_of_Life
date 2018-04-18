@@ -19,7 +19,10 @@ Life reader_file(){
         file >> matriz[i][j];
       }
     }
+  }else if(file.is_open() == NULL){
+    std::cout<< "Wrong sintaxe!";
   }
+
   Life obj {line,column};
   obj.set_alive(matriz);
   //esse stoi serve pra converter de string pra int
