@@ -1,19 +1,11 @@
 #include "../include/header.h"
 
-int main(int *argv char**argv){
+int main(int *argc,char *argv[]){
 
-  Life obj = reader_file();
+  Life obj = reader_file(argv[1]);
   obj.print();
   //obj.set_alive();
-  char *arqentrada,*arqsaida;
+  //std::cout << argv[2] << std::endl;
 
-  for(auto var = 0; argv[var] != NULL;++var){
-  		*arqentrada = new argv[var];
-  		strcpy(arqentrada, argv[var +1]);
-  		++var;
-  			
-  		*arqsaida = new argv[var];
-  		strcpy(arqsaida,argv[var+1]);
-  }
   return 0;
 }
