@@ -20,7 +20,7 @@ Life reader_file(){
       }
     }
   }else if(file.is_open() == NULL){
-    std::cout<< "Wrong sintaxe!";
+    std::cout<< "Wrong syntaxe!";
   }
 
   Life obj {line,column};
