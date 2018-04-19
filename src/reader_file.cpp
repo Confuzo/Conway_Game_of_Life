@@ -1,10 +1,10 @@
 #include "../include/header.h"
 
-Life reader_file(){
+Life reader_file(char *argv){
 
   int line, column;
   char type;
-  std::ifstream file ("../data/cfg1.dat");
+  std::ifstream file (argv);
 
   char ** matriz;
   if(file.is_open()){
@@ -19,8 +19,8 @@ Life reader_file(){
         file >> matriz[i][j];
       }
     }
-  }else if(file.is_open() == NULL){
-    std::cout<< "Wrong syntaxe!";
+  }else if(*argv == ""){
+    std::cout<< "Wrong sintaxe!";
   }
 
   Life obj {line,column};
