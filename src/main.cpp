@@ -15,4 +15,5 @@ int main(int *argv char**argv){
   		*arqsaida = new argv[var];
   		strcpy(arqsaida,argv[var+1]);
   }
+  return 0;
 }
