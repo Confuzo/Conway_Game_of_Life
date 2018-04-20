@@ -1,19 +1,18 @@
-#ifndef life.h
 #define life.h
 class Life{
+ private:
 		int nLin;
 		int nCol;
-		char ** matriz;
+		int count = 1;
+		char ** matrix;
 	public:
 		Life(int Lin, int Col);
-    	char type;
-    	void set_alive(char **  entry);
-    	void update();
-    	void print();
-    	bool stable();
-    	bool extinct();
+		Life();
+  	char type;
+    void set_alive(char **  matrix, char* output);
+    void update();
+  	void print();
+  	bool stable();
+		bool extinct();
 
 };
-
-Life reader_file(char*argv);
-#endif
