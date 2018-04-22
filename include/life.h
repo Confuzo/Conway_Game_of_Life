@@ -13,6 +13,6 @@ class Life{
     void update();
   	void print();
   	bool stable();
-		bool extinct();
+	bool extinct();
 
 };
