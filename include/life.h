@@ -1,3 +1,4 @@
+// /<-- @file life.h -->/
 #define life.h
 class Life{
  private:
@@ -12,7 +13,7 @@ class Life{
     void set_alive(char **  matrix, char* output);
     void update();
   	void print();
-  	bool stable();
+  	bool stable(char ** matrix_one,char ** matrix);
 	bool extinct();
 
 };

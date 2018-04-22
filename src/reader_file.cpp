@@ -1,3 +1,4 @@
+// @file reader_file.cpp
 #include "../include/header.h"
 
 char ** generate_grid(int line, int column, std::ifstream& file);

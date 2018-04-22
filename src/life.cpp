@@ -1,3 +1,4 @@
+// /<-- @file life.h -->/
 #include "../include/header.h"
 
 Life::Life(int Lin, int Col){
@@ -16,6 +17,7 @@ void Life::set_alive(char **  matrix, char * output){
          for(auto i(0); i< nLin; i++){
            for(auto j(0); j < nCol; j++){
              outfile << matrix[i][j];
+             auto matrix_one = matrix[0][0];
            }
            outfile << "\n";
       	}
@@ -38,8 +40,13 @@ void Life::print(){
     	}
 }
 
-bool Life::stable(){
-      return true;
+bool Life::stable( char** matrix_one, char **matrix){
+	for(auto i{0}; i < nLin; i++)
+		for(auto j{0}; j < nCol ; j++)
+			if(matrix_one[i][j] == matrix[i][j]){
+      			return false;
+			}
+	return true;
 }
 
 bool Life::extinct(){
