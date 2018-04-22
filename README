@@ -1,0 +1,4 @@
+PROJETO CONWAY GAME OF LIFE.
+	1)Feito por Abrãao Vitor e Giovanne da Silva Santos.
+	2)Para compilá-lo,deve se estar na pasta src e digitar "make main.cpp".
+	3)Para executá-lo,deve-se digitar "./life <nome_de_entrada> <nome_da_saída>" .
