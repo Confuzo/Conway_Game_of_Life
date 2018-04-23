@@ -5,11 +5,11 @@ int main(int *argc,char *argv[]){
   Life obj;
   char key;
   if(argv[2] != NULL){
-    obj = reader_file(argv[1], argv[2]);
+    obj = reader_file(argv[1], argv[2]); /*<-- leitura dos parametros passados pela linha comando -->*/
   }else{
     obj = reader_file(argv[1],"../data/output.txt");
   }
-  while(true){
+  while(true){ /*<-- laço para gerar as matrizes de acordo com as regras do jogo -->*/
 
       obj.print();
       std::cout << "Do you wish continue with the generation?\n (y,n)?\n";
@@ -17,7 +17,7 @@ int main(int *argc,char *argv[]){
       if(key != 'y' and key !='Y'){
         return -1;
       }
-      obj.update();
+      obj.update(); /*<-- ocorrencia de atualização da matriz,e verificação de extinção ou estabilidade -->*/
       if(obj.extinct()){
           std::cout << "Extinct configuration, ending software...\n";
           obj.set_alive(obj.aux_matrix, argv[2]);

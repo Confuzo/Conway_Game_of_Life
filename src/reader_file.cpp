@@ -2,14 +2,14 @@
 
 char ** generate_grid(int line, int column, std::ifstream& file);
 
-Life reader_file(char* filename, char * output){
+Life reader_file(char* filename, char * output){ // função leitora do arquivo que apresenta a matriz com as celulas
 
   int line, column;
   char type;
   std::ifstream file (filename);
   char ** matrix;
 
-  if(file.is_open()){
+  if(file.is_open()){ // verificação de que o documento está certo e os parâmetros passados pela linha de comando também estão
     file >> line;
     file >> column;
     file >> type;
@@ -28,7 +28,7 @@ Life reader_file(char* filename, char * output){
   return obj;
 }
 
-char ** generate_grid(int line, int column, std::ifstream& file){
+char ** generate_grid(int line, int column, std::ifstream& file){ 
 
   char ** matrix;
   matrix = new char * [line+2];

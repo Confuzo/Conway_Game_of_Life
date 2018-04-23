@@ -1,6 +1,6 @@
-#include "../include/header.h"
+#include "../include/header.h" /*<-- como parte da identação,temos o funcionamento das funções assinadas no "life.h"  -->*/
 
-Life::Life(int Lin, int Col){
+Life::Life(int Lin, int Col){ /*<-- variaveis que serviram para dar o tamanho das iterações -->*/
 
         nLin = Lin;
         nCol = Col;
@@ -8,10 +8,10 @@ Life::Life(int Lin, int Col){
 
 Life::Life(){}
 
-void Life::set_alive(char **  matrix, char * output){
+void Life::set_alive(char **  matrix, char * output){ 
       this->matrix = matrix;
-      std::ofstream outfile (output, std::ios::app);
-
+      std::ofstream outfile (output, std::ios::app); /*<-- função geradora de celulas utilizando a ofstream e -->*/
+      												/*<-- iterações nas colunas e linhas da matriz -->*/
       outfile << "\nThe "<< count <<"° conjecture of the life generation is: \n";
          for(auto i(1); i< nLin+1; i++){
            for(auto j(1); j < nCol+1; j++){
@@ -23,15 +23,15 @@ void Life::set_alive(char **  matrix, char * output){
         outfile.close();
 }
 
-void Life::update(){
+void Life::update(){ /*<-- atualização de novas gerações -->*/
 
   int alive, survive;
   for (auto i(1); i < nLin + 1; i++){
     for (auto j(1); j < nCol + 1; j++){
       alive = 0;
       survive = 0;
-      if(matrix[i][j] == '.'){
-        if(matrix[i-1][j-1] == type){
+      if(matrix[i][j] == '.'){ /*<-- a produção é baseada no que está envolta do "." ,  -->*/
+        if(matrix[i-1][j-1] == type){ /*<--criando células vivas ou mortas dependendo das condições -->*/
           alive++;
         }
         if(matrix[i-1][j] == type){
@@ -86,7 +86,7 @@ void Life::update(){
           survive++;
         }
 
-        if(survive != 3 and survive != 2){
+        if(survive != 3 and survive != 2){ /*<-- aqui ocorre a morte caso tenha mais de duas células vivas envolta -->*/
           aux_matrix[i][j] = '.';
         }
       }
@@ -97,7 +97,7 @@ void Life::update(){
 
 }
 
-void Life::print(){
+void Life::print(){ /*<-- imprensão da matrizes -->*/
     std::cout << "\nThe "<< count <<"° conjecture of the life generation is: \n";
        for(auto i(1); i< nLin+1; i++){
          for(auto j(1); j < nCol+1; j++){
@@ -118,7 +118,7 @@ void Life::copy(){
   }
 
 }
-bool Life::stable(){
+bool Life::stable(){ /*<-- verifiação de se a matriz está estabelecida -->*/
   for(auto i(0); i < nLin + 2; i++)
 		for(auto j(0); j < nCol + 2; j++)
 			if(matrix[i][j] != aux_matrix[i][j]){
@@ -127,7 +127,7 @@ bool Life::stable(){
   return true;
 }
 
-bool Life::extinct(){
+bool Life::extinct(){ /*<-- verificação para extinção -->*/
   for(auto i(0); i < nLin + 2; i++)
 		for(auto j(0); j < nCol + 2; j++)
 			if(matrix[i][j] == type){

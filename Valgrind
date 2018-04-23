@@ -1,0 +1,83 @@
+Diagnóstico Valgrind :
+==30840== Memcheck, a memory error detector
+==30840== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==30840== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==30840== Command: make
+==30840== 
+g++ -O0 -g -W -Wall -std=c++11 -pedantic -c ./src/main.cpp
+In file included from ./src/../include/header.h:4:0,
+                 from ./src/main.cpp:1:
+./src/../include/life.h:1:13: warning: ISO C++11 requires whitespace after the macro name
+ #define life.h
+             ^
+./src/main.cpp:3:5: warning: first argument of ‘int main(int*, char**)’ should be ‘int’ [-Wmain]
+ int main(int *argc,char *argv[]){
+     ^
+./src/main.cpp: In function ‘int main(int*, char**)’:
+./src/main.cpp:10:51: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wpedantic]
+     obj = reader_file(argv[1],"../data/output.txt");
+                                                   ^
+./src/main.cpp: At global scope:
+./src/main.cpp:3:15: warning: unused parameter ‘argc’ [-Wunused-parameter]
+ int main(int *argc,char *argv[]){
+               ^
+g++ -O0 -g -W -Wall -std=c++11 -pedantic -c ./src/reader_file.cpp
+In file included from ./src/../include/header.h:4:0,
+                 from ./src/reader_file.cpp:1:
+./src/../include/life.h:1:13: warning: ISO C++11 requires whitespace after the macro name
+ #define life.h
+             ^
+g++ -O0 -g -W -Wall -std=c++11 -pedantic -c ./src/life.cpp
+In file included from ./src/../include/header.h:4:0,
+                 from ./src/life.cpp:1:
+./src/../include/life.h:1:13: warning: ISO C++11 requires whitespace after the macro name
+ #define life.h
+             ^
+g++ main.o reader_file.o life.o -o ./bin/life_game
+/usr/bin/ld: cannot open output file ./bin/life_game: No such file or directory
+collect2: error: ld returned 1 exit status
+makefile:12: recipe for target 'bin/life_game' failed
+make: *** [bin/life_game] Error 1
+==30840== 
+==30840== HEAP SUMMARY:
+==30840==     in use at exit: 147,376 bytes in 1,405 blocks
+==30840==   total heap usage: 2,228 allocs, 823 frees, 379,023 bytes allocated
+==30840== 
+==30840== 10 bytes in 1 blocks are definitely lost in loss record 64 of 252
+==30840==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30840==    by 0x50C9489: strdup (strdup.c:42)
+==30840==    by 0x418328: xstrdup (in /usr/bin/make)
+==30840==    by 0x423FC6: target_environment (in /usr/bin/make)
+==30840==    by 0x4148D4: ??? (in /usr/bin/make)
+==30840==    by 0x4152B3: ??? (in /usr/bin/make)
+==30840==    by 0x415BD2: new_job (in /usr/bin/make)
+==30840==    by 0x420D9E: ??? (in /usr/bin/make)
+==30840==    by 0x4210AE: update_goal_chain (in /usr/bin/make)
+==30840==    by 0x407780: main (in /usr/bin/make)
+==30840== 
+==30840== 30 bytes in 3 blocks are definitely lost in loss record 110 of 252
+==30840==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==30840==    by 0x50C9489: strdup (strdup.c:42)
+==30840==    by 0x418328: xstrdup (in /usr/bin/make)
+==30840==    by 0x423FC6: target_environment (in /usr/bin/make)
+==30840==    by 0x4148D4: ??? (in /usr/bin/make)
+==30840==    by 0x4152B3: ??? (in /usr/bin/make)
+==30840==    by 0x415BD2: new_job (in /usr/bin/make)
+==30840==    by 0x420D9E: ??? (in /usr/bin/make)
+==30840==    by 0x41F73D: ??? (in /usr/bin/make)
+==30840==    by 0x41FEE7: ??? (in /usr/bin/make)
+==30840==    by 0x4210AE: update_goal_chain (in /usr/bin/make)
+==30840==    by 0x407780: main (in /usr/bin/make)
+==30840== 
+==30840== LEAK SUMMARY:
+==30840==    definitely lost: 40 bytes in 4 blocks
+==30840==    indirectly lost: 0 bytes in 0 blocks
+==30840==      possibly lost: 0 bytes in 0 blocks
+==30840==    still reachable: 147,336 bytes in 1,401 blocks
+==30840==         suppressed: 0 bytes in 0 blocks
+==30840== Reachable blocks (those to which a pointer was found) are not shown.
+==30840== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==30840== 
+==30840== For counts of detected and suppressed errors, rerun with: -v
+==30840== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+
