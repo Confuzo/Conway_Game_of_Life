@@ -1,83 +1,1264 @@
 Diagnóstico Valgrind :
-==30840== Memcheck, a memory error detector
-==30840== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==30840== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==30840== Command: make
-==30840== 
-g++ -O0 -g -W -Wall -std=c++11 -pedantic -c ./src/main.cpp
-In file included from ./src/../include/header.h:4:0,
-                 from ./src/main.cpp:1:
-./src/../include/life.h:1:13: warning: ISO C++11 requires whitespace after the macro name
- #define life.h
-             ^
-./src/main.cpp:3:5: warning: first argument of ‘int main(int*, char**)’ should be ‘int’ [-Wmain]
- int main(int *argc,char *argv[]){
-     ^
-./src/main.cpp: In function ‘int main(int*, char**)’:
-./src/main.cpp:10:51: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wpedantic]
-     obj = reader_file(argv[1],"../data/output.txt");
-                                                   ^
-./src/main.cpp: At global scope:
-./src/main.cpp:3:15: warning: unused parameter ‘argc’ [-Wunused-parameter]
- int main(int *argc,char *argv[]){
-               ^
-g++ -O0 -g -W -Wall -std=c++11 -pedantic -c ./src/reader_file.cpp
-In file included from ./src/../include/header.h:4:0,
-                 from ./src/reader_file.cpp:1:
-./src/../include/life.h:1:13: warning: ISO C++11 requires whitespace after the macro name
- #define life.h
-             ^
-g++ -O0 -g -W -Wall -std=c++11 -pedantic -c ./src/life.cpp
-In file included from ./src/../include/header.h:4:0,
-                 from ./src/life.cpp:1:
-./src/../include/life.h:1:13: warning: ISO C++11 requires whitespace after the macro name
- #define life.h
-             ^
-g++ main.o reader_file.o life.o -o ./bin/life_game
-/usr/bin/ld: cannot open output file ./bin/life_game: No such file or directory
-collect2: error: ld returned 1 exit status
-makefile:12: recipe for target 'bin/life_game' failed
-make: *** [bin/life_game] Error 1
-==30840== 
-==30840== HEAP SUMMARY:
-==30840==     in use at exit: 147,376 bytes in 1,405 blocks
-==30840==   total heap usage: 2,228 allocs, 823 frees, 379,023 bytes allocated
-==30840== 
-==30840== 10 bytes in 1 blocks are definitely lost in loss record 64 of 252
-==30840==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==30840==    by 0x50C9489: strdup (strdup.c:42)
-==30840==    by 0x418328: xstrdup (in /usr/bin/make)
-==30840==    by 0x423FC6: target_environment (in /usr/bin/make)
-==30840==    by 0x4148D4: ??? (in /usr/bin/make)
-==30840==    by 0x4152B3: ??? (in /usr/bin/make)
-==30840==    by 0x415BD2: new_job (in /usr/bin/make)
-==30840==    by 0x420D9E: ??? (in /usr/bin/make)
-==30840==    by 0x4210AE: update_goal_chain (in /usr/bin/make)
-==30840==    by 0x407780: main (in /usr/bin/make)
-==30840== 
-==30840== 30 bytes in 3 blocks are definitely lost in loss record 110 of 252
-==30840==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==30840==    by 0x50C9489: strdup (strdup.c:42)
-==30840==    by 0x418328: xstrdup (in /usr/bin/make)
-==30840==    by 0x423FC6: target_environment (in /usr/bin/make)
-==30840==    by 0x4148D4: ??? (in /usr/bin/make)
-==30840==    by 0x4152B3: ??? (in /usr/bin/make)
-==30840==    by 0x415BD2: new_job (in /usr/bin/make)
-==30840==    by 0x420D9E: ??? (in /usr/bin/make)
-==30840==    by 0x41F73D: ??? (in /usr/bin/make)
-==30840==    by 0x41FEE7: ??? (in /usr/bin/make)
-==30840==    by 0x4210AE: update_goal_chain (in /usr/bin/make)
-==30840==    by 0x407780: main (in /usr/bin/make)
-==30840== 
-==30840== LEAK SUMMARY:
-==30840==    definitely lost: 40 bytes in 4 blocks
-==30840==    indirectly lost: 0 bytes in 0 blocks
-==30840==      possibly lost: 0 bytes in 0 blocks
-==30840==    still reachable: 147,336 bytes in 1,401 blocks
-==30840==         suppressed: 0 bytes in 0 blocks
-==30840== Reachable blocks (those to which a pointer was found) are not shown.
-==30840== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==30840== 
-==30840== For counts of detected and suppressed errors, rerun with: -v
-==30840== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
-
+==4230== Memcheck, a memory error detector
+==4230== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==4230== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==4230== Command: make
+==4230== 
+make: *** No targets specified and no makefile found.  Stop.
+==4230== 
+==4230== HEAP SUMMARY:
+==4230==     in use at exit: 137,459 bytes in 1,254 blocks
+==4230==   total heap usage: 1,988 allocs, 734 frees, 349,860 bytes allocated
+==4230== 
+==4230== 1 bytes in 1 blocks are still reachable in loss record 1 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4062C4: main (in /usr/bin/make)
+==4230== 
+==4230== 1 bytes in 1 blocks are still reachable in loss record 2 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4062F4: main (in /usr/bin/make)
+==4230== 
+==4230== 1 bytes in 1 blocks are still reachable in loss record 3 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423B61: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 1 bytes in 1 blocks are still reachable in loss record 4 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406EA3: main (in /usr/bin/make)
+==4230== 
+==4230== 1 bytes in 1 blocks are still reachable in loss record 5 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x41E0C3: read_all_makefiles (in /usr/bin/make)
+==4230==    by 0x406FC7: main (in /usr/bin/make)
+==4230== 
+==4230== 1 bytes in 1 blocks are still reachable in loss record 6 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423275: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x407011: main (in /usr/bin/make)
+==4230== 
+==4230== 1 bytes in 1 blocks are still reachable in loss record 7 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423275: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x416A39: ??? (in /usr/bin/make)
+==4230==    by 0x4076C2: main (in /usr/bin/make)
+==4230== 
+==4230== 1 bytes in 1 blocks are still reachable in loss record 8 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423275: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x416AD5: ??? (in /usr/bin/make)
+==4230==    by 0x4076C2: main (in /usr/bin/make)
+==4230== 
+==4230== 2 bytes in 1 blocks are still reachable in loss record 9 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423A45: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 10 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406324: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 11 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423BA0: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 12 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423BD2: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 13 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C04: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 14 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C36: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 15 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C68: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 16 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C9A: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 17 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423CCC: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 18 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423CFE: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 19 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423D30: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 20 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423D62: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 21 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423D94: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 22 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423DC6: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 23 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423DF8: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 3 bytes in 1 blocks are still reachable in loss record 24 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423E2A: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 4 bytes in 1 blocks are still reachable in loss record 25 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423ABA: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 5 bytes in 1 blocks are still reachable in loss record 26 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4067F2: main (in /usr/bin/make)
+==4230== 
+==4230== 5 bytes in 1 blocks are still reachable in loss record 27 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406821: main (in /usr/bin/make)
+==4230== 
+==4230== 6 bytes in 1 blocks are still reachable in loss record 28 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x406714: main (in /usr/bin/make)
+==4230== 
+==4230== 7 bytes in 1 blocks are still reachable in loss record 29 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406BAE: main (in /usr/bin/make)
+==4230== 
+==4230== 7 bytes in 1 blocks are still reachable in loss record 30 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x416A39: ??? (in /usr/bin/make)
+==4230==    by 0x406E57: main (in /usr/bin/make)
+==4230== 
+==4230== 8 bytes in 1 blocks are still reachable in loss record 31 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423E7D: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 9 bytes in 1 blocks are still reachable in loss record 32 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x409EA4: set_default_suffixes (in /usr/bin/make)
+==4230==    by 0x406E44: main (in /usr/bin/make)
+==4230== 
+==4230== 10 bytes in 1 blocks are still reachable in loss record 33 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406350: main (in /usr/bin/make)
+==4230== 
+==4230== 10 bytes in 1 blocks are still reachable in loss record 34 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x40672D: main (in /usr/bin/make)
+==4230== 
+==4230== 10 bytes in 1 blocks are still reachable in loss record 35 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423A45: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 10 bytes in 1 blocks are still reachable in loss record 36 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423AE8: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 10 bytes in 1 blocks are still reachable in loss record 37 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423B61: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 10 bytes in 1 blocks are still reachable in loss record 38 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x416AD5: ??? (in /usr/bin/make)
+==4230==    by 0x406E57: main (in /usr/bin/make)
+==4230== 
+==4230== 11 bytes in 1 blocks are still reachable in loss record 39 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4062C4: main (in /usr/bin/make)
+==4230== 
+==4230== 12 bytes in 1 blocks are still reachable in loss record 40 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406324: main (in /usr/bin/make)
+==4230== 
+==4230== 12 bytes in 1 blocks are still reachable in loss record 41 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406A34: main (in /usr/bin/make)
+==4230== 
+==4230== 12 bytes in 1 blocks are still reachable in loss record 42 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406AA5: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 43 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x40647E: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 44 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406A34: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 45 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406AA5: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 46 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4067F2: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 47 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423ABA: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 48 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423CFE: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 49 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423D30: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 50 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423D62: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 51 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423D94: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 52 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423DC6: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 53 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423DF8: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 13 bytes in 1 blocks are still reachable in loss record 54 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423E2A: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 14 bytes in 1 blocks are still reachable in loss record 55 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4062F4: main (in /usr/bin/make)
+==4230== 
+==4230== 14 bytes in 1 blocks are still reachable in loss record 56 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x42434F: do_variable_definition (in /usr/bin/make)
+==4230==    by 0x41B8AA: construct_include_path (in /usr/bin/make)
+==4230==    by 0x406B4F: main (in /usr/bin/make)
+==4230== 
+==4230== 14 bytes in 1 blocks are still reachable in loss record 57 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406EA3: main (in /usr/bin/make)
+==4230== 
+==4230== 14 bytes in 1 blocks are still reachable in loss record 58 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x41E0C3: read_all_makefiles (in /usr/bin/make)
+==4230==    by 0x406FC7: main (in /usr/bin/make)
+==4230== 
+==4230== 16 bytes in 1 blocks are still reachable in loss record 59 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406821: main (in /usr/bin/make)
+==4230== 
+==4230== 16 bytes in 1 blocks are still reachable in loss record 60 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x40A594: ??? (in /usr/bin/make)
+==4230==    by 0x40A839: file_exists_p (in /usr/bin/make)
+==4230==    by 0x41E214: read_all_makefiles (in /usr/bin/make)
+==4230==    by 0x406FC7: main (in /usr/bin/make)
+==4230== 
+==4230== 16 bytes in 4 blocks are still reachable in loss record 61 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4219AD: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FAD: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 20 bytes in 1 blocks are still reachable in loss record 62 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423AE8: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 20 bytes in 5 blocks are still reachable in loss record 63 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4219AD: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FD8: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 27 bytes in 1 blocks are still reachable in loss record 64 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423BA0: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 27 bytes in 1 blocks are still reachable in loss record 65 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423BD2: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 27 bytes in 1 blocks are still reachable in loss record 66 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C04: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 27 bytes in 1 blocks are still reachable in loss record 67 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C36: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 27 bytes in 1 blocks are still reachable in loss record 68 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C68: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 27 bytes in 1 blocks are still reachable in loss record 69 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C9A: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 27 bytes in 1 blocks are still reachable in loss record 70 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423CCC: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 32 bytes in 2 blocks are still reachable in loss record 71 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x40A594: ??? (in /usr/bin/make)
+==4230==    by 0x40A758: dir_file_exists_p (in /usr/bin/make)
+==4230==    by 0x42183F: count_implicit_rule_limits (in /usr/bin/make)
+==4230==    by 0x407291: main (in /usr/bin/make)
+==4230== 
+==4230== 32 bytes in 4 blocks are still reachable in loss record 72 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421991: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FAD: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 32 bytes in 4 blocks are still reachable in loss record 73 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x42199F: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FAD: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 39 bytes in 1 blocks are still reachable in loss record 74 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x406293: main (in /usr/bin/make)
+==4230== 
+==4230== 39 bytes in 1 blocks are still reachable in loss record 75 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406BAE: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 76 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4062C4: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 77 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4062F4: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 78 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406324: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 79 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406350: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 80 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x40647E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 81 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406A34: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 82 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406AA5: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 83 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4067F2: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 84 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406821: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 85 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x41B9D3: construct_include_path (in /usr/bin/make)
+==4230==    by 0x406B4F: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 86 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x42434F: do_variable_definition (in /usr/bin/make)
+==4230==    by 0x41B8AA: construct_include_path (in /usr/bin/make)
+==4230==    by 0x406B4F: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 87 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406BAE: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 88 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x409EA4: set_default_suffixes (in /usr/bin/make)
+==4230==    by 0x406E44: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 89 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423A45: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 90 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423ABA: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 91 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423AE8: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 92 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423B61: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 93 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423BA0: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 94 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423BD2: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 95 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C04: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 96 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C36: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 97 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C68: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 98 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423C9A: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 99 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423CCC: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 100 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423CFE: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 101 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423D30: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 102 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423D62: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 103 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423D94: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 104 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423DC6: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 105 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423DF8: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 106 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x423E2A: define_automatic_variables (in /usr/bin/make)
+==4230==    by 0x406E4E: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 107 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x416A39: ??? (in /usr/bin/make)
+==4230==    by 0x406E57: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 108 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x416AD5: ??? (in /usr/bin/make)
+==4230==    by 0x406E57: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 109 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406EA3: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 1 blocks are still reachable in loss record 110 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x41E0C3: read_all_makefiles (in /usr/bin/make)
+==4230==    by 0x406FC7: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 5 blocks are still reachable in loss record 111 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421991: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FD8: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 40 bytes in 5 blocks are still reachable in loss record 112 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x42199F: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FD8: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 45 bytes in 1 blocks are still reachable in loss record 113 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423275: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x42434F: do_variable_definition (in /usr/bin/make)
+==4230==    by 0x41B8AA: construct_include_path (in /usr/bin/make)
+==4230==    by 0x406B4F: main (in /usr/bin/make)
+==4230== 
+==4230== 56 bytes in 14 blocks are still reachable in loss record 114 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421AD2: create_pattern_rule (in /usr/bin/make)
+==4230==    by 0x421C5F: ??? (in /usr/bin/make)
+==4230==    by 0x421DB9: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 77 bytes in 4 blocks are still reachable in loss record 115 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x421A42: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FAD: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 80 bytes in 5 blocks are still reachable in loss record 116 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x40A458: ??? (in /usr/bin/make)
+==4230==    by 0x40A845: file_exists_p (in /usr/bin/make)
+==4230==    by 0x41E214: read_all_makefiles (in /usr/bin/make)
+==4230==    by 0x406FC7: main (in /usr/bin/make)
+==4230== 
+==4230== 96 bytes in 6 blocks are still reachable in loss record 117 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x40A8EC: file_impossible (in /usr/bin/make)
+==4230==    by 0x412B5C: ??? (in /usr/bin/make)
+==4230==    by 0x412CEF: try_implicit_rule (in /usr/bin/make)
+==4230==    by 0x42064D: ??? (in /usr/bin/make)
+==4230==    by 0x4210AE: update_goal_chain (in /usr/bin/make)
+==4230==    by 0x40744B: main (in /usr/bin/make)
+==4230== 
+==4230== 112 bytes in 1 blocks are still reachable in loss record 118 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x40A646: ??? (in /usr/bin/make)
+==4230==    by 0x40A839: file_exists_p (in /usr/bin/make)
+==4230==    by 0x41E214: read_all_makefiles (in /usr/bin/make)
+==4230==    by 0x406FC7: main (in /usr/bin/make)
+==4230== 
+==4230== 112 bytes in 14 blocks are still reachable in loss record 119 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421B72: ??? (in /usr/bin/make)
+==4230==    by 0x421DB9: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 112 bytes in 14 blocks are still reachable in loss record 120 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421B7F: ??? (in /usr/bin/make)
+==4230==    by 0x421DB9: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 120 bytes in 3 blocks are still reachable in loss record 121 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x41E2FB: read_all_makefiles (in /usr/bin/make)
+==4230==    by 0x406FC7: main (in /usr/bin/make)
+==4230== 
+==4230== 126 bytes in 5 blocks are still reachable in loss record 122 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x421A42: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FD8: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 128 bytes in 1 blocks are still reachable in loss record 123 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41819F: xrealloc (in /usr/bin/make)
+==4230==    by 0x418276: concat (in /usr/bin/make)
+==4230==    by 0x41BDB3: parse_file_seq (in /usr/bin/make)
+==4230==    by 0x409E44: set_default_suffixes (in /usr/bin/make)
+==4230==    by 0x406E44: main (in /usr/bin/make)
+==4230== 
+==4230== 134 bytes in 1 blocks are still reachable in loss record 124 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x406350: main (in /usr/bin/make)
+==4230== 
+==4230== 136 bytes in 1 blocks are still reachable in loss record 125 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x40C1D9: enter_file (in /usr/bin/make)
+==4230==    by 0x409E06: set_default_suffixes (in /usr/bin/make)
+==4230==    by 0x406E44: main (in /usr/bin/make)
+==4230== 
+==4230== 136 bytes in 1 blocks are still reachable in loss record 126 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x40C1D9: enter_file (in /usr/bin/make)
+==4230==    by 0x406E72: main (in /usr/bin/make)
+==4230== 
+==4230== 136 bytes in 34 blocks are still reachable in loss record 127 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421AD2: create_pattern_rule (in /usr/bin/make)
+==4230==    by 0x421C5F: ??? (in /usr/bin/make)
+==4230==    by 0x421E2E: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 140 bytes in 35 blocks are still reachable in loss record 128 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421AD2: create_pattern_rule (in /usr/bin/make)
+==4230==    by 0x421C5F: ??? (in /usr/bin/make)
+==4230==    by 0x421D95: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 147 bytes in 1 blocks are still reachable in loss record 129 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41819F: xrealloc (in /usr/bin/make)
+==4230==    by 0x41C065: parse_file_seq (in /usr/bin/make)
+==4230==    by 0x409E44: set_default_suffixes (in /usr/bin/make)
+==4230==    by 0x406E44: main (in /usr/bin/make)
+==4230== 
+==4230== 147 bytes in 1 blocks are still reachable in loss record 130 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x409EA4: set_default_suffixes (in /usr/bin/make)
+==4230==    by 0x406E44: main (in /usr/bin/make)
+==4230== 
+==4230== 168 bytes in 1 blocks are still reachable in loss record 131 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41819F: xrealloc (in /usr/bin/make)
+==4230==    by 0x418926: ??? (in /usr/bin/make)
+==4230==    by 0x4198B1: fatal (in /usr/bin/make)
+==4230==    by 0x407BBE: main (in /usr/bin/make)
+==4230== 
+==4230== 192 bytes in 4 blocks are still reachable in loss record 132 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421A23: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FAD: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 200 bytes in 1 blocks are still reachable in loss record 133 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x40AF87: ??? (in /usr/bin/make)
+==4230==    by 0x40B787: variable_expand_string (in /usr/bin/make)
+==4230==    by 0x417EFF: ??? (in /usr/bin/make)
+==4230==    by 0x406451: main (in /usr/bin/make)
+==4230== 
+==4230== 200 bytes in 5 blocks are still reachable in loss record 134 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x41BDC1: parse_file_seq (in /usr/bin/make)
+==4230==    by 0x421A03: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FD8: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 224 bytes in 4 blocks are still reachable in loss record 135 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x42197B: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FAD: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 240 bytes in 5 blocks are still reachable in loss record 136 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421A23: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FD8: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 240 bytes in 6 blocks are still reachable in loss record 137 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x41BDC1: parse_file_seq (in /usr/bin/make)
+==4230==    by 0x421A03: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FAD: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 272 bytes in 34 blocks are still reachable in loss record 138 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421B72: ??? (in /usr/bin/make)
+==4230==    by 0x421E2E: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 272 bytes in 34 blocks are still reachable in loss record 139 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421B7F: ??? (in /usr/bin/make)
+==4230==    by 0x421E2E: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 280 bytes in 5 blocks are still reachable in loss record 140 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x42197B: install_pattern_rule (in /usr/bin/make)
+==4230==    by 0x409FD8: install_default_implicit_rules (in /usr/bin/make)
+==4230==    by 0x40728C: main (in /usr/bin/make)
+==4230== 
+==4230== 280 bytes in 35 blocks are still reachable in loss record 141 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421B72: ??? (in /usr/bin/make)
+==4230==    by 0x421D95: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 280 bytes in 35 blocks are still reachable in loss record 142 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421B7F: ??? (in /usr/bin/make)
+==4230==    by 0x421D95: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 384 bytes in 24 blocks are still reachable in loss record 143 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x40A8EC: file_impossible (in /usr/bin/make)
+==4230==    by 0x412B5C: ??? (in /usr/bin/make)
+==4230==    by 0x412AFC: ??? (in /usr/bin/make)
+==4230==    by 0x412AFC: ??? (in /usr/bin/make)
+==4230==    by 0x412CEF: try_implicit_rule (in /usr/bin/make)
+==4230==    by 0x42064D: ??? (in /usr/bin/make)
+==4230==    by 0x4210AE: update_goal_chain (in /usr/bin/make)
+==4230==    by 0x40744B: main (in /usr/bin/make)
+==4230== 
+==4230== 408 bytes in 3 blocks are still reachable in loss record 144 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x40C1D9: enter_file (in /usr/bin/make)
+==4230==    by 0x41E30F: read_all_makefiles (in /usr/bin/make)
+==4230==    by 0x406FC7: main (in /usr/bin/make)
+==4230== 
+==4230== 432 bytes in 27 blocks are still reachable in loss record 145 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x40A8EC: file_impossible (in /usr/bin/make)
+==4230==    by 0x412B5C: ??? (in /usr/bin/make)
+==4230==    by 0x412AFC: ??? (in /usr/bin/make)
+==4230==    by 0x412CEF: try_implicit_rule (in /usr/bin/make)
+==4230==    by 0x42064D: ??? (in /usr/bin/make)
+==4230==    by 0x4210AE: update_goal_chain (in /usr/bin/make)
+==4230==    by 0x40744B: main (in /usr/bin/make)
+==4230== 
+==4230== 472 bytes in 63 blocks are still reachable in loss record 146 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x40A04A: define_default_variables (in /usr/bin/make)
+==4230==    by 0x406E60: main (in /usr/bin/make)
+==4230== 
+==4230== 560 bytes in 14 blocks are still reachable in loss record 147 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x421C2B: ??? (in /usr/bin/make)
+==4230==    by 0x421DB9: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 784 bytes in 14 blocks are still reachable in loss record 148 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421AAA: create_pattern_rule (in /usr/bin/make)
+==4230==    by 0x421C5F: ??? (in /usr/bin/make)
+==4230==    by 0x421DB9: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 974 bytes in 75 blocks are still reachable in loss record 149 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C94D9: strndup (strndup.c:43)
+==4230==    by 0x41834A: xstrndup (in /usr/bin/make)
+==4230==    by 0x4232EE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4063EF: main (in /usr/bin/make)
+==4230== 
+==4230== 1,024 bytes in 1 blocks are still reachable in loss record 150 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x4258F4: hash_init (in /usr/bin/make)
+==4230==    by 0x411412: hash_init_function_table (in /usr/bin/make)
+==4230==    by 0x40626D: main (in /usr/bin/make)
+==4230== 
+==4230== 1,024 bytes in 1 blocks are still reachable in loss record 151 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x4258F4: hash_init (in /usr/bin/make)
+==4230==    by 0x40A6BF: ??? (in /usr/bin/make)
+==4230==    by 0x40A839: file_exists_p (in /usr/bin/make)
+==4230==    by 0x41E214: read_all_makefiles (in /usr/bin/make)
+==4230==    by 0x406FC7: main (in /usr/bin/make)
+==4230== 
+==4230== 1,360 bytes in 34 blocks are still reachable in loss record 152 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x421C2B: ??? (in /usr/bin/make)
+==4230==    by 0x421E2E: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 1,400 bytes in 35 blocks are still reachable in loss record 153 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x41BDC1: parse_file_seq (in /usr/bin/make)
+==4230==    by 0x409E44: set_default_suffixes (in /usr/bin/make)
+==4230==    by 0x406E44: main (in /usr/bin/make)
+==4230== 
+==4230== 1,475 bytes in 63 blocks are still reachable in loss record 154 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x40A04A: define_default_variables (in /usr/bin/make)
+==4230==    by 0x406E60: main (in /usr/bin/make)
+==4230== 
+==4230== 1,638 bytes in 49 blocks are still reachable in loss record 155 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x409F54: install_default_suffix_rules (in /usr/bin/make)
+==4230==    by 0x406E49: main (in /usr/bin/make)
+==4230== 
+==4230== 1,904 bytes in 34 blocks are still reachable in loss record 156 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421AAA: create_pattern_rule (in /usr/bin/make)
+==4230==    by 0x421C5F: ??? (in /usr/bin/make)
+==4230==    by 0x421E2E: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 1,960 bytes in 35 blocks are still reachable in loss record 157 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x421AAA: create_pattern_rule (in /usr/bin/make)
+==4230==    by 0x421C5F: ??? (in /usr/bin/make)
+==4230==    by 0x421D95: convert_to_pattern (in /usr/bin/make)
+==4230==    by 0x407287: main (in /usr/bin/make)
+==4230== 
+==4230== 2,048 bytes in 1 blocks are still reachable in loss record 158 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x4258F4: hash_init (in /usr/bin/make)
+==4230==    by 0x40AF32: hash_init_directories (in /usr/bin/make)
+==4230==    by 0x406268: main (in /usr/bin/make)
+==4230== 
+==4230== 2,048 bytes in 1 blocks are still reachable in loss record 159 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x4258F4: hash_init (in /usr/bin/make)
+==4230==    by 0x406268: main (in /usr/bin/make)
+==4230== 
+==4230== 2,352 bytes in 49 blocks are still reachable in loss record 160 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x409F3D: install_default_suffix_rules (in /usr/bin/make)
+==4230==    by 0x406E49: main (in /usr/bin/make)
+==4230== 
+==4230== 2,520 bytes in 63 blocks are still reachable in loss record 161 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x40A04A: define_default_variables (in /usr/bin/make)
+==4230==    by 0x406E60: main (in /usr/bin/make)
+==4230== 
+==4230== 2,832 bytes in 74 blocks are still reachable in loss record 162 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x50C9489: strdup (strdup.c:42)
+==4230==    by 0x418328: xstrdup (in /usr/bin/make)
+==4230==    by 0x423312: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4063EF: main (in /usr/bin/make)
+==4230== 
+==4230== 3,000 bytes in 75 blocks are still reachable in loss record 163 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4232DE: define_variable_in_set (in /usr/bin/make)
+==4230==    by 0x4063EF: main (in /usr/bin/make)
+==4230== 
+==4230== 4,760 bytes in 35 blocks are still reachable in loss record 164 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x40C1D9: enter_file (in /usr/bin/make)
+==4230==    by 0x40CC28: enter_prereqs (in /usr/bin/make)
+==4230==    by 0x409E4E: set_default_suffixes (in /usr/bin/make)
+==4230==    by 0x406E44: main (in /usr/bin/make)
+==4230== 
+==4230== 4,760 bytes in 35 blocks are still reachable in loss record 165 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x40C1D9: enter_file (in /usr/bin/make)
+==4230==    by 0x409F30: install_default_suffix_rules (in /usr/bin/make)
+==4230==    by 0x406E49: main (in /usr/bin/make)
+==4230== 
+==4230== 8,176 bytes in 1 blocks are still reachable in loss record 166 of 169
+==4230==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x418105: xmalloc (in /usr/bin/make)
+==4230==    by 0x4224CB: ??? (in /usr/bin/make)
+==4230==    by 0x422660: strcache_add_len (in /usr/bin/make)
+==4230==    by 0x41B93F: construct_include_path (in /usr/bin/make)
+==4230==    by 0x406B4F: main (in /usr/bin/make)
+==4230== 
+==4230== 8,192 bytes in 1 blocks are still reachable in loss record 167 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x4258F4: hash_init (in /usr/bin/make)
+==4230==    by 0x406259: main (in /usr/bin/make)
+==4230== 
+==4230== 8,192 bytes in 1 blocks are still reachable in loss record 168 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x4258F4: hash_init (in /usr/bin/make)
+==4230==    by 0x406263: main (in /usr/bin/make)
+==4230== 
+==4230== 65,536 bytes in 1 blocks are still reachable in loss record 169 of 169
+==4230==    at 0x4C2FB55: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4230==    by 0x41813A: xcalloc (in /usr/bin/make)
+==4230==    by 0x4258F4: hash_init (in /usr/bin/make)
+==4230==    by 0x40625E: main (in /usr/bin/make)
+==4230== 
+==4230== LEAK SUMMARY:
+==4230==    definitely lost: 0 bytes in 0 blocks
+==4230==    indirectly lost: 0 bytes in 0 blocks
+==4230==      possibly lost: 0 bytes in 0 blocks
+==4230==    still reachable: 137,459 bytes in 1,254 blocks
+==4230==         suppressed: 0 bytes in 0 blocks
+==4230== 
+==4230== For counts of detected and suppressed errors, rerun with: -v
+==4230== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
