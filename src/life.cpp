@@ -55,7 +55,7 @@ void Life::update(){
         if(matrix[i+1][j+1] == type){
           alive++;
         }
-        std::cout << alive;
+
         if(alive == 3){
           aux_matrix[i][j] = type;
         }
@@ -85,7 +85,7 @@ void Life::update(){
         if(matrix[i+1][j+1] == type){
           survive++;
         }
-        std::cout << survive;
+
         if(survive != 3 and survive != 2){
           aux_matrix[i][j] = '.';
         }
@@ -119,9 +119,19 @@ void Life::copy(){
 
 }
 bool Life::stable(){
-      return true;
+  for(auto i(0); i < nLin + 2; i++)
+		for(auto j(0); j < nCol + 2; j++)
+			if(matrix[i][j] != aux_matrix[i][j]){
+      			return false;
+			}
+  return true;
 }
 
 bool Life::extinct(){
-      return true;
+  for(auto i(0); i < nLin + 2; i++)
+		for(auto j(0); j < nCol + 2; j++)
+			if(matrix[i][j] == type){
+      			return false;
+			}
+  return true;
 }

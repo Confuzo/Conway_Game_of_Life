@@ -18,6 +18,17 @@ int main(int *argc,char *argv[]){
         return -1;
       }
       obj.update();
+      if(obj.extinct()){
+          std::cout << "Extinct configuration, ending software...\n";
+          obj.set_alive(obj.aux_matrix, argv[2]);
+          std::exit(0);
+      }
+      if(obj.stable()){
+        std::cout << "Stable configuration, ending software...\n";
+        obj.set_alive(obj.aux_matrix, argv[2]);
+        std::exit(0);
+      }
+
       obj.set_alive(obj.aux_matrix, argv[2]);
   }
 
