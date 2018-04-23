@@ -23,6 +23,7 @@ Life reader_file(char* filename, char * output){
 
   Life obj {line,column};
   obj.set_alive(matrix, output);
+  obj.type = type;
 
   return obj;
 }
@@ -30,11 +31,15 @@ Life reader_file(char* filename, char * output){
 char ** generate_grid(int line, int column, std::ifstream& file){
 
   char ** matrix;
-  matrix = new char * [line];
-  for(auto i(0); i < line; i++){
-    matrix[i] = new char [column];
-    for(auto j(0); j < column; j++){
-      file >> matrix[i][j];
+  matrix = new char * [line+2];
+  for(auto i(0); i < line+2; i++){
+    matrix[i] = new char [column+2];
+    for(auto j(0); j < column+2; j++){
+      if(i==0 or i==line+1 or j==0 or j==column+1){
+        matrix[i][j] = '/';
+      }else{
+        file >> matrix[i][j];
+      }
     }
   }
 

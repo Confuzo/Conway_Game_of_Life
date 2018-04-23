@@ -14,11 +14,11 @@ int main(int *argc,char *argv[]){
       obj.print();
       std::cout << "Do you wish continue with the generation?\n (y,n)?\n";
       std::cin >> key;
-      if(key == 'y') std::cout << "work\n";
       if(key != 'y' and key !='Y'){
         return -1;
       }
       obj.update();
+      obj.set_alive(obj.aux_matrix, argv[2]);
   }
 
 
