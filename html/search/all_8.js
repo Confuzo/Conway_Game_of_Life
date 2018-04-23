@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['reader_5ffile',['reader_file',['../header_8h.html#a0535f6ebdb65b6b852ac7f4c035570c8',1,'reader_file(char *filename, char *output):&#160;reader_file.cpp'],['../reader__file_8cpp.html#a0535f6ebdb65b6b852ac7f4c035570c8',1,'reader_file(char *filename, char *output):&#160;reader_file.cpp']]],
-  ['reader_5ffile_2ecpp',['reader_file.cpp',['../reader__file_8cpp.html',1,'']]]
+  ['print',['print',['../classLife.html#a502bd46fefb24950e64865ce87c4b670',1,'Life']]]
 ];

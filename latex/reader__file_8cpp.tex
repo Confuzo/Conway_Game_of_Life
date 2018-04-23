@@ -7,9 +7,9 @@ Include dependency graph for reader\+\_\+file.\+cpp\+:
 \begin{DoxyCompactItemize}
 \item 
 char $\ast$$\ast$ \hyperlink{reader__file_8cpp_a534d92ab657b14ff92e63a3802790f77}{generate\+\_\+grid} (int line, int column, std\+::ifstream \&file)
-\item 
+\begin{DoxyCompactList}\small\item\em inclusão da header que tem todas as bibliotecas necessárias \end{DoxyCompactList}\item 
 \hyperlink{classLife}{Life} \hyperlink{reader__file_8cpp_a0535f6ebdb65b6b852ac7f4c035570c8}{reader\+\_\+file} (char $\ast$filename, char $\ast$output)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em assinatura da função leitora do arquivo da matriz com as células \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -22,6 +22,22 @@ char $\ast$$\ast$ \hyperlink{reader__file_8cpp_a534d92ab657b14ff92e63a3802790f77
 \item[{std\+::ifstream \&}]{file}
 \end{DoxyParamCaption}
 )}\hypertarget{reader__file_8cpp_a534d92ab657b14ff92e63a3802790f77}{}\label{reader__file_8cpp_a534d92ab657b14ff92e63a3802790f77}
+
+
+inclusão da header que tem todas as bibliotecas necessárias 
+
+função geradora da grade de acordo com as colunas,linhas dada pelo arquivo
+
+assinatura da função leitora do arquivo para gerar a matriz
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & que são as linhas , column as colunas e file que é o arquivo dado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+matrix que será a matriz gerada de acordo com o arquivo 
+\end{DoxyReturn}
 \index{reader\+\_\+file.\+cpp@{reader\+\_\+file.\+cpp}!reader\+\_\+file@{reader\+\_\+file}}
 \index{reader\+\_\+file@{reader\+\_\+file}!reader\+\_\+file.\+cpp@{reader\+\_\+file.\+cpp}}
 \subsubsection[{\texorpdfstring{reader\+\_\+file(char $\ast$filename, char $\ast$output)}{reader_file(char *filename, char *output)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Life} reader\+\_\+file (
@@ -30,3 +46,15 @@ char $\ast$$\ast$ \hyperlink{reader__file_8cpp_a534d92ab657b14ff92e63a3802790f77
 \item[{char $\ast$}]{output}
 \end{DoxyParamCaption}
 )}\hypertarget{reader__file_8cpp_a0535f6ebdb65b6b852ac7f4c035570c8}{}\label{reader__file_8cpp_a0535f6ebdb65b6b852ac7f4c035570c8}
+
+
+assinatura da função leitora do arquivo da matriz com as células 
+
+função leitora do arquivo que irá passar as caracteristicas das células, servirar também para testa se os parâmetros passado na linha de comando na mais estão corretos 
+\begin{DoxyParams}{Parameters}
+{\em filename} & que é o nome do arquivo de entrada e output o de saída \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+obj com as caracteristas repassada pelo arquivo dado 
+\end{DoxyReturn}

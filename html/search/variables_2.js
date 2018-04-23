@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type',['type',['../classLife.html#a32121ce5b98c0b7d8b1b0f2a5f1114aa',1,'Life']]]
+  ['matrix',['matrix',['../classLife.html#a2f62f4ff6ec85d88de087aa9fd228054',1,'Life']]]
 ];
