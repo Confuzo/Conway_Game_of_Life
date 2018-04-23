@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['print',['print',['../classLife.html#a502bd46fefb24950e64865ce87c4b670',1,'Life']]]
+  ['main',['main',['../main_8cpp.html#aaae5342f62513e9afff300cb4b850454',1,'main.cpp']]]
 ];

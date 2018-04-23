@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['extinct',['extinct',['../classLife.html#a988f58733428b7957d52ca85fecdb21d',1,'Life']]]
+  ['copy',['copy',['../classLife.html#a1e7183d91f5c7f8935915daaf33a5f93',1,'Life']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['count',['count',['../classLife.html#a29f2873b42b36f6bd69a7b9e07f9eda9',1,'Life']]]
+  ['aux_5fmatrix',['aux_matrix',['../classLife.html#a207d51f8631df0fbda12a23e2b6b112f',1,'Life']]]
 ];

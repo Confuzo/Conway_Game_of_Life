@@ -1,4 +1,15 @@
-PROJETO CONWAY GAME OF LIFE.
+PT/BR
+PROJETO CONWAY GAME OF LIFE:
 	1)Feito por Abrãao Vitor Lopes Dantas e Giovanne da Silva Santos.
-	2)Para compilá-lo,deve se estar na pasta src e digitar "make main.cpp".
+	2)Para compilá-lo,deve se estar na pasta src e digitar "make".
 	3)Para executá-lo,deve-se digitar "./life <nome_de_entrada> <nome_da_saída>" .
+	4)As limitações e/ou problemas que o programa possui/apresenta , para melhor visualização e um "README" mais limpo, 
+	 foram colocadas no arquivo .txt baseado no diagnóstivo do Valgrind.  
+
+EN/US
+CONWAY GAME OF LIFE PROJECT:
+	1)Made by Abrãao Vitor Lopes Dantas e Giovanne da Silva Santos.
+	2)To compile it, it must be in the folder src and type "make".
+	3)To execute it, you must type "./life <input_name> <output_name>'".
+	4)The limitaions and/or problems that the program has/present, for better viewing and
+cleanner "README",were placed in the .txt file based on the Valgrind diagnostic.  
