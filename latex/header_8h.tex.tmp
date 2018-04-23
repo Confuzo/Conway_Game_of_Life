@@ -10,7 +10,7 @@ This graph shows which files directly or indirectly include this file\+:
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{header_8h_a383d5e14413e39bc8997c9f4edbe05d4}{header}
+\#define \hyperlink{header_8h_a383d5e14413e39bc8997c9f4edbe05d4}{header}~/$\ast$$<$-\/-\/ definindo a biblioteca header.\+h -\/-\/$>$$\ast$/
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -22,7 +22,7 @@ This graph shows which files directly or indirectly include this file\+:
 \subsection{Macro Definition Documentation}
 \index{header.\+h@{header.\+h}!header@{header}}
 \index{header@{header}!header.\+h@{header.\+h}}
-\subsubsection[{\texorpdfstring{header}{header}}]{\setlength{\rightskip}{0pt plus 5cm}\#define header}\hypertarget{header_8h_a383d5e14413e39bc8997c9f4edbe05d4}{}\label{header_8h_a383d5e14413e39bc8997c9f4edbe05d4}
+\subsubsection[{\texorpdfstring{header}{header}}]{\setlength{\rightskip}{0pt plus 5cm}\#define header~/$\ast$$<$-\/-\/ definindo a biblioteca header.\+h -\/-\/$>$$\ast$/}\hypertarget{header_8h_a383d5e14413e39bc8997c9f4edbe05d4}{}\label{header_8h_a383d5e14413e39bc8997c9f4edbe05d4}
 
 
 \subsection{Function Documentation}
