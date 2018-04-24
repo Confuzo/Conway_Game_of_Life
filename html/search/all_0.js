@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['aux_5fmatrix',['aux_matrix',['../classLife.html#a207d51f8631df0fbda12a23e2b6b112f',1,'Life']]]
+  ['copy',['copy',['../classLife.html#a1e7183d91f5c7f8935915daaf33a5f93',1,'Life']]]
 ];

@@ -1,18 +1,10 @@
 \hypertarget{classLife}{}\section{Life Class Reference}
 \label{classLife}\index{Life@{Life}}
-
-
-{\ttfamily \#include $<$life.\+h$>$}
-
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classLife_a08477d04bc4bf98837c9e37b041f2d35}{Life} (int Lin, int Col)
-\item 
-\hyperlink{classLife_a6de2a371f6f778f8b4938d219390b746}{Life} ()
-\item 
-void \hyperlink{classLife_a6ccd51752d8955b6171547fa57b14db3}{set\+\_\+alive} (char $\ast$$\ast$\hyperlink{classLife_a2f62f4ff6ec85d88de087aa9fd228054}{matrix}, char $\ast$output)
-\begin{DoxyCompactList}\small\item\em função que \char`\"{}setará\char`\"{} as condições de cada célula de acordo com os updates \end{DoxyCompactList}\item 
+void \hyperlink{classLife_a6ccd51752d8955b6171547fa57b14db3}{set\+\_\+alive} (char $\ast$$\ast$matrix, char $\ast$output)
+\begin{DoxyCompactList}\small\item\em Função que \char`\"{}setará\char`\"{} as condições de cada célula de acordo com os updates. \end{DoxyCompactList}\item 
 void \hyperlink{classLife_a0e00f2735584f3ddebb397742b520d3b}{update} ()
 \item 
 void \hyperlink{classLife_a502bd46fefb24950e64865ce87c4b670}{print} ()
@@ -23,42 +15,6 @@ bool \hyperlink{classLife_a49c95a25d20e9eabf940305f99bcf2c3}{stable} ()
 \item 
 bool \hyperlink{classLife_a988f58733428b7957d52ca85fecdb21d}{extinct} ()
 \end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-char $\ast$$\ast$ \hyperlink{classLife_a207d51f8631df0fbda12a23e2b6b112f}{aux\+\_\+matrix}
-\item 
-char \hyperlink{classLife_a32121ce5b98c0b7d8b1b0f2a5f1114aa}{type}
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-int \hyperlink{classLife_a3d1e835008666154b80d675664719e2e}{n\+Lin}
-\item 
-int \hyperlink{classLife_a8e1450e50642cc56b7697dc473be4dee}{n\+Col}
-\item 
-int \hyperlink{classLife_a29f2873b42b36f6bd69a7b9e07f9eda9}{count} = 1
-\item 
-char $\ast$$\ast$ \hyperlink{classLife_a2f62f4ff6ec85d88de087aa9fd228054}{matrix}
-\end{DoxyCompactItemize}
-
-
-\subsection{Constructor \& Destructor Documentation}
-\index{Life@{Life}!Life@{Life}}
-\index{Life@{Life}!Life@{Life}}
-\subsubsection[{\texorpdfstring{Life(int Lin, int Col)}{Life(int Lin, int Col)}}]{\setlength{\rightskip}{0pt plus 5cm}Life\+::\+Life (
-\begin{DoxyParamCaption}
-\item[{int}]{Lin, }
-\item[{int}]{Col}
-\end{DoxyParamCaption}
-)}\hypertarget{classLife_a08477d04bc4bf98837c9e37b041f2d35}{}\label{classLife_a08477d04bc4bf98837c9e37b041f2d35}
-\index{Life@{Life}!Life@{Life}}
-\index{Life@{Life}!Life@{Life}}
-\subsubsection[{\texorpdfstring{Life()}{Life()}}]{\setlength{\rightskip}{0pt plus 5cm}Life\+::\+Life (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{classLife_a6de2a371f6f778f8b4938d219390b746}{}\label{classLife_a6de2a371f6f778f8b4938d219390b746}
 
 
 \subsection{Member Function Documentation}
@@ -69,15 +25,15 @@ char $\ast$$\ast$ \hyperlink{classLife_a2f62f4ff6ec85d88de087aa9fd228054}{matrix
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classLife_a1e7183d91f5c7f8935915daaf33a5f93}{}\label{classLife_a1e7183d91f5c7f8935915daaf33a5f93}
-função que guarda a primeira matriz gerada para determinar futuramente se houve estabilidade \index{Life@{Life}!extinct@{extinct}}
+Função que guarda a primeira matriz gerada para determinar futuramente se houve estabilidade \index{Life@{Life}!extinct@{extinct}}
 \index{extinct@{extinct}!Life@{Life}}
 \subsubsection[{\texorpdfstring{extinct()}{extinct()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Life\+::extinct (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classLife_a988f58733428b7957d52ca85fecdb21d}{}\label{classLife_a988f58733428b7957d52ca85fecdb21d}
-função que testa se há extinção das células na nova matriz gerada \begin{DoxyReturn}{Returns}
-caso não há mais células,ela retorna \char`\"{}true\char`\"{} para o laço da main 
+Função que testa se há extinção das células na nova matriz gerada \begin{DoxyReturn}{Returns}
+Caso não há mais células,ela retorna \char`\"{}true\char`\"{} para o laço da main 
 \end{DoxyReturn}
 \index{Life@{Life}!print@{print}}
 \index{print@{print}!Life@{Life}}
@@ -86,7 +42,7 @@ caso não há mais células,ela retorna \char`\"{}true\char`\"{} para o laço da
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classLife_a502bd46fefb24950e64865ce87c4b670}{}\label{classLife_a502bd46fefb24950e64865ce87c4b670}
-função que imprime as novas matrizes \index{Life@{Life}!set\+\_\+alive@{set\+\_\+alive}}
+Função que imprime as novas matrizes \index{Life@{Life}!set\+\_\+alive@{set\+\_\+alive}}
 \index{set\+\_\+alive@{set\+\_\+alive}!Life@{Life}}
 \subsubsection[{\texorpdfstring{set\+\_\+alive(char $\ast$$\ast$matrix, char $\ast$output)}{set_alive(char **matrix, char *output)}}]{\setlength{\rightskip}{0pt plus 5cm}void Life\+::set\+\_\+alive (
 \begin{DoxyParamCaption}
@@ -96,11 +52,11 @@ função que imprime as novas matrizes \index{Life@{Life}!set\+\_\+alive@{set\+\
 )}\hypertarget{classLife_a6ccd51752d8955b6171547fa57b14db3}{}\label{classLife_a6ccd51752d8955b6171547fa57b14db3}
 
 
-função que \char`\"{}setará\char`\"{} as condições de cada célula de acordo com os updates 
+Função que \char`\"{}setará\char`\"{} as condições de cada célula de acordo com os updates. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em matrix} & e output que são os parâmetros dados pelas próximas gerações \\
+{\em Matrix} & e output que são os parâmetros dados pelas próximas gerações \\
 \hline
 \end{DoxyParams}
 \index{Life@{Life}!stable@{stable}}
@@ -110,8 +66,8 @@ função que \char`\"{}setará\char`\"{} as condições de cada célula de acord
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classLife_a49c95a25d20e9eabf940305f99bcf2c3}{}\label{classLife_a49c95a25d20e9eabf940305f99bcf2c3}
-função que testa se há igualdade entre a primeira matriz e a nova matriz gerada \begin{DoxyReturn}{Returns}
-caso sejam iguais,ela retorna \char`\"{}true\char`\"{} paro laço da main. 
+Função que testa se há igualdade entre a primeira matriz e a nova matriz gerada \begin{DoxyReturn}{Returns}
+Caso sejam iguais,ela retorna \char`\"{}true\char`\"{} paro laço da main. 
 \end{DoxyReturn}
 \index{Life@{Life}!update@{update}}
 \index{update@{update}!Life@{Life}}
@@ -120,28 +76,7 @@ caso sejam iguais,ela retorna \char`\"{}true\char`\"{} paro laço da main.
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classLife_a0e00f2735584f3ddebb397742b520d3b}{}\label{classLife_a0e00f2735584f3ddebb397742b520d3b}
-função que servirá para atualizar a matriz das células de acordo com as vizinhanças, a determinada célula vive ou morre 
-
-\subsection{Member Data Documentation}
-\index{Life@{Life}!aux\+\_\+matrix@{aux\+\_\+matrix}}
-\index{aux\+\_\+matrix@{aux\+\_\+matrix}!Life@{Life}}
-\subsubsection[{\texorpdfstring{aux\+\_\+matrix}{aux_matrix}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ Life\+::aux\+\_\+matrix}\hypertarget{classLife_a207d51f8631df0fbda12a23e2b6b112f}{}\label{classLife_a207d51f8631df0fbda12a23e2b6b112f}
-\index{Life@{Life}!count@{count}}
-\index{count@{count}!Life@{Life}}
-\subsubsection[{\texorpdfstring{count}{count}}]{\setlength{\rightskip}{0pt plus 5cm}int Life\+::count = 1\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classLife_a29f2873b42b36f6bd69a7b9e07f9eda9}{}\label{classLife_a29f2873b42b36f6bd69a7b9e07f9eda9}
-\index{Life@{Life}!matrix@{matrix}}
-\index{matrix@{matrix}!Life@{Life}}
-\subsubsection[{\texorpdfstring{matrix}{matrix}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ Life\+::matrix\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classLife_a2f62f4ff6ec85d88de087aa9fd228054}{}\label{classLife_a2f62f4ff6ec85d88de087aa9fd228054}
-\index{Life@{Life}!n\+Col@{n\+Col}}
-\index{n\+Col@{n\+Col}!Life@{Life}}
-\subsubsection[{\texorpdfstring{n\+Col}{nCol}}]{\setlength{\rightskip}{0pt plus 5cm}int Life\+::n\+Col\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classLife_a8e1450e50642cc56b7697dc473be4dee}{}\label{classLife_a8e1450e50642cc56b7697dc473be4dee}
-\index{Life@{Life}!n\+Lin@{n\+Lin}}
-\index{n\+Lin@{n\+Lin}!Life@{Life}}
-\subsubsection[{\texorpdfstring{n\+Lin}{nLin}}]{\setlength{\rightskip}{0pt plus 5cm}int Life\+::n\+Lin\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classLife_a3d1e835008666154b80d675664719e2e}{}\label{classLife_a3d1e835008666154b80d675664719e2e}
-\index{Life@{Life}!type@{type}}
-\index{type@{type}!Life@{Life}}
-\subsubsection[{\texorpdfstring{type}{type}}]{\setlength{\rightskip}{0pt plus 5cm}char Life\+::type}\hypertarget{classLife_a32121ce5b98c0b7d8b1b0f2a5f1114aa}{}\label{classLife_a32121ce5b98c0b7d8b1b0f2a5f1114aa}
-
+Função que servirá para atualizar a matriz das células de acordo com as vizinhanças, a determinada célula vive ou morre 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

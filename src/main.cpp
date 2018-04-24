@@ -1,9 +1,10 @@
 #include "../include/header.h"
 /**
-* @details na main teremos a execução do Conway Game of life,tal que teremos aplicação das regras do jogos
+* @file main.cpp
+* @details Na main teremos a execução do Conway Game of life,tal que teremos aplicação das regras do jogos
 * utilizando dentro do laço e dos testes dentro dele.
-* @param como parâmetro temos dado baseado no que é dado na linha de comando
-* @return retorna a matriz contruida pelas funções a cada geração enquanto estiver de acordo com as regras do jogo
+* @param Como parâmetro temos dado baseado no que é dado na linha de comando
+* @return Retorna a matriz contruida pelas funções a cada geração enquanto estiver de acordo com as regras do jogo
 */
 int main(int *argc,char *argv[]){
 

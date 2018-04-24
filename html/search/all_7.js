@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ncol',['nCol',['../classLife.html#a8e1450e50642cc56b7697dc473be4dee',1,'Life']]],
-  ['nlin',['nLin',['../classLife.html#a3d1e835008666154b80d675664719e2e',1,'Life']]]
+  ['set_5falive',['set_alive',['../classLife.html#a6ccd51752d8955b6171547fa57b14db3',1,'Life']]],
+  ['stable',['stable',['../classLife.html#a49c95a25d20e9eabf940305f99bcf2c3',1,'Life']]]
 ];

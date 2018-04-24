@@ -13,8 +13,8 @@ Life::Life(int Lin, int Col){
 Life::Life(){}
 
 /**
-* @brief função que "setará" as condições de cada célula de acordo com os updates
-* @param matrix e output que são os parâmetros dados pelas próximas gerações
+* @brief Função que "setará" as condições de cada célula de acordo com os updates
+* @param Matrix e output que são os parâmetros dados pelas próximas gerações
 */
 
 void Life::set_alive(char **  matrix, char * output){ 
@@ -33,7 +33,7 @@ void Life::set_alive(char **  matrix, char * output){
 }
 
 /**
-* @details função que servirá para atualizar a matriz das células de acordo com as vizinhanças, a determinada célula vive ou morre
+* @details Função que servirá para atualizar a matriz das células de acordo com as vizinhanças, a determinada célula vive ou morre
 */
 
 void Life::update(){ 
@@ -111,7 +111,7 @@ void Life::update(){
 }
 
 /**
-* @details função que imprime as novas matrizes
+* @details Função que imprime as novas matrizes
 */
 
 void Life::print(){ 
@@ -126,7 +126,7 @@ void Life::print(){
 }
 
 /**
-* @details função que guarda a primeira matriz gerada para determinar futuramente se houve estabilidade
+* @details Função que guarda a primeira matriz gerada para determinar futuramente se houve estabilidade
 */
 
 void Life::copy(){
@@ -141,8 +141,8 @@ void Life::copy(){
 }
 
 /**
-* @details função que testa se há igualdade entre a primeira matriz e a nova matriz gerada
-* @return caso sejam iguais,ela retorna "true" paro laço da main.
+* @details Função que testa se há igualdade entre a primeira matriz e a nova matriz gerada
+* @return Caso sejam iguais,ela retorna "true" paro laço da main.
 */
 
 bool Life::stable(){ 
@@ -155,8 +155,8 @@ bool Life::stable(){
 }
 
 /**
-* @details função que testa se há extinção das células na nova matriz gerada
-* @return caso não há mais células,ela retorna "true" para o laço da main
+* @details Função que testa se há extinção das células na nova matriz gerada
+* @return Caso não há mais células,ela retorna "true" para o laço da main
 */
 
 bool Life::extinct(){ 

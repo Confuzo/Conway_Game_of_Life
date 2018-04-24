@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['life',['Life',['../classLife.html#a08477d04bc4bf98837c9e37b041f2d35',1,'Life::Life(int Lin, int Col)'],['../classLife.html#a6de2a371f6f778f8b4938d219390b746',1,'Life::Life()']]]
+  ['reader_5ffile',['reader_file',['../header_8h.html#a0535f6ebdb65b6b852ac7f4c035570c8',1,'reader_file.cpp']]]
 ];

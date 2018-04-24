@@ -1,6 +1,7 @@
 /**
- @details No life.h temos a definição dela que está composta da classe Life cujo a parte privade tem as variaveis necessárias para iterações 
- e funcionamento das funções assim como as suas assinaturas.
+* @file life.h
+*@details No life.h temos a definição dela que está composta da classe Life cujo a parte privade tem as variaveis necessárias para iterações 
+*e funcionamento das funções assim como as suas assinaturas.
 */
 #define life.h 
 class Life{

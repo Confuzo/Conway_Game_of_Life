@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['generate_5fgrid',['generate_grid',['../reader__file_8cpp.html#a534d92ab657b14ff92e63a3802790f77',1,'reader_file.cpp']]]
+  ['life',['Life',['../classLife.html',1,'']]],
+  ['life_2ecpp',['life.cpp',['../life_8cpp.html',1,'']]],
+  ['life_2eh',['life.h',['../life_8h.html',1,'']]]
 ];

@@ -1,5 +1,10 @@
 \hypertarget{header_8h}{}\section{include/header.h File Reference}
 \label{header_8h}\index{include/header.\+h@{include/header.\+h}}
+
+
+Assinatura da função leitora do arquivo da matriz com as células.  
+
+
 {\ttfamily \#include $<$iostream$>$}\\*
 {\ttfamily \#include $<$fstream$>$}\\*
 {\ttfamily \#include \char`\"{}life.\+h\char`\"{}}\\*
@@ -7,22 +12,16 @@ Include dependency graph for header.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{header_8h_a383d5e14413e39bc8997c9f4edbe05d4}{header}
-\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classLife}{Life} \hyperlink{header_8h_a0535f6ebdb65b6b852ac7f4c035570c8}{reader\+\_\+file} (char $\ast$filename, char $\ast$output)
-\begin{DoxyCompactList}\small\item\em assinatura da função leitora do arquivo da matriz com as células \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
-\subsection{Macro Definition Documentation}
-\index{header.\+h@{header.\+h}!header@{header}}
-\index{header@{header}!header.\+h@{header.\+h}}
-\subsubsection[{\texorpdfstring{header}{header}}]{\setlength{\rightskip}{0pt plus 5cm}\#define header}\hypertarget{header_8h_a383d5e14413e39bc8997c9f4edbe05d4}{}\label{header_8h_a383d5e14413e39bc8997c9f4edbe05d4}
+\subsection{Detailed Description}
+Assinatura da função leitora do arquivo da matriz com as células. 
+
 
 
 \subsection{Function Documentation}
@@ -34,15 +33,11 @@ This graph shows which files directly or indirectly include this file\+:
 \item[{char $\ast$}]{output}
 \end{DoxyParamCaption}
 )}\hypertarget{header_8h_a0535f6ebdb65b6b852ac7f4c035570c8}{}\label{header_8h_a0535f6ebdb65b6b852ac7f4c035570c8}
-
-
-assinatura da função leitora do arquivo da matriz com as células 
-
-função leitora do arquivo que irá passar as caracteristicas das células, servirar também para testa se os parâmetros passado na linha de comando na mais estão corretos 
+Função leitora do arquivo que irá passar as caracteristicas das células, servirar também para testa se os parâmetros passado na linha de comando na mais estão corretos 
 \begin{DoxyParams}{Parameters}
-{\em filename} & que é o nome do arquivo de entrada e output o de saída \\
+{\em Filename} & que é o nome do arquivo de entrada e output o de saída \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-obj com as caracteristas repassada pelo arquivo dado 
+Obj com as caracteristas repassada pelo arquivo dado 
 \end{DoxyReturn}
