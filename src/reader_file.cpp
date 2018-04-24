@@ -1,15 +1,26 @@
-#include "../include/header.h"
-
+/**
+ * @file reader_file.cpp
+ * @brief Inclusão da header que tem todas as bibliotecas necessárias
+*/
+#include "../include/header.h" 
+/**
+*@brief assinatura da função leitora do arquivo para gerar a matriz
+*/
 char ** generate_grid(int line, int column, std::ifstream& file);
-
-Life reader_file(char* filename, char * output){ // função leitora do arquivo que apresenta a matriz com as celulas
+/**
+* @details Função leitora do arquivo que irá passar as caracteristicas das células, servirar também para testa se 
+* os parâmetros passado na linha de comando na mais estão corretos
+* @param Filename que é o nome do arquivo de entrada e output o de saída
+* @return Obj com as caracteristas repassada pelo arquivo dado
+*/
+Life reader_file(char* filename, char * output){ 
 
   int line, column;
   char type;
   std::ifstream file (filename);
   char ** matrix;
 
-  if(file.is_open()){ // verificação de que o documento está certo e os parâmetros passados pela linha de comando também estão
+  if(file.is_open()){ 
     file >> line;
     file >> column;
     file >> type;
@@ -27,7 +38,11 @@ Life reader_file(char* filename, char * output){ // função leitora do arquivo 
 
   return obj;
 }
-
+/**
+* @brief Função geradora da grade de acordo com as colunas,linhas dada pelo arquivo
+* @param Line que são as linhas , column as colunas e file que é o arquivo dado
+* @return Matrix que será a matriz gerada de acordo com o arquivo
+*/
 char ** generate_grid(int line, int column, std::ifstream& file){ 
 
   char ** matrix;

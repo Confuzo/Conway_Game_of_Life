@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['header',['header',['../header_8h.html#a383d5e14413e39bc8997c9f4edbe05d4',1,'header.h']]],
-  ['header_2eh',['header.h',['../header_8h.html',1,'']]]
+  ['life',['Life',['../classLife.html',1,'']]],
+  ['life_2ecpp',['life.cpp',['../life_8cpp.html',1,'']]],
+  ['life_2eh',['life.h',['../life_8h.html',1,'']]]
 ];

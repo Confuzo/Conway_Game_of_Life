@@ -1,6 +1,9 @@
-#define header /* definindo a biblioteca header.h */
-#include <iostream> /*incluindo as bibliotecas necessárias e a assinatura da função reader_file */
+#define header 
+#include <iostream> 
 #include <fstream>
 #include "life.h"
-
+/**
+ * @file header.h
+ * @brief Assinatura da função leitora do arquivo da matriz com as células 
+*/
 Life reader_file(char* filename, char * output); 
