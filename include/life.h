@@ -9,9 +9,9 @@ class Life{
  private:
 		int nLin;
 		int nCol;
-		int count = 1;
 		char ** matrix;
 	public:
+		int count = 1;
     char ** aux_matrix;
 		Life(int Lin, int Col);
 		Life();

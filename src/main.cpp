@@ -25,6 +25,9 @@ int main(int argc,char *argv[]){
           std::exit(0);
       }
       if(obj.stable(argv[2])){
+        obj.set_alive(obj.aux_matrix, argv[2]);
+        obj.print();
+        std::cout << "Se tornou estável na geração: " << (obj.count)-1 << std::endl;
         std::cout << "Stable configuration, ending software...\n";
         std::exit(0);
       }
