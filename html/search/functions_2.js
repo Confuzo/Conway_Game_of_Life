@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['print',['print',['../classLife.html#a502bd46fefb24950e64865ce87c4b670',1,'Life']]]
+  ['generate_5fgrid',['generate_grid',['../reader__file_8cpp.html#a534d92ab657b14ff92e63a3802790f77',1,'reader_file.cpp']]]
 ];

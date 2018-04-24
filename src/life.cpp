@@ -1,7 +1,7 @@
 #include "../include/header.h" 
 /**
 * @file life.cpp
-* @details Função life que passará as linhas e colunas da generate grid para classe life
+* @brief Função life que passará as linhas e colunas da generate grid para classe life
 * @param Lin e Col, linhas e colunas passadas pela generate grid respectivamente
 */
 Life::Life(int Lin, int Col){ 

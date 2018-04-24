@@ -1,5 +1,5 @@
 /**
- * @file readr_file.cpp
+ * @file reader_file.cpp
  * @brief Inclusão da header que tem todas as bibliotecas necessárias
 */
 #include "../include/header.h" 

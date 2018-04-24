@@ -1,7 +1,7 @@
 #include "../include/header.h"
 /**
 * @file main.cpp
-* @details Na main teremos a execução do Conway Game of life,tal que teremos aplicação das regras do jogos
+* @brief Função main onde teremos aplicação das regras dos jogos e abertura do arquivos
 * utilizando dentro do laço e dos testes dentro dele.
 * @param Como parâmetro temos dado baseado no que é dado na linha de comando
 * @return Retorna a matriz contruida pelas funções a cada geração enquanto estiver de acordo com as regras do jogo
